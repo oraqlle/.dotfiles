@@ -1,14 +1,33 @@
-# Lines configured by zsh-newuser-install
-HISTFILE=~/.zsh_history
-HISTSIZE=1200
-SAVEHIST=1200
+# ZSH HOME
+export ZSH=$HOME/.zsh
 
+## Lines configured by zsh-newuser-install
+HISTFILE=$ZSH/.zsh_history
+HISTSIZE=5000
+SAVEHIST=10000
+
+# History won't save duplicates.
+setopt HIST_IGNORE_ALL_DUPS
+
+# History won't show duplicates on search.
+setopt HIST_FIND_NO_DUPS
+
+# Keybinds
 # bindkey -e  # Emacs keybinds in shell
 # bindkey -v  # Vim keybinds in shell
+bindkey '^ ' autosuggest-accept
 
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/tyler/.zshrc'
+
+# Plugins
+# zsh-autosuggestions
+source $ZSH/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# zsh-completions
+fpath=($ZSH/plugins/zsh-completions/src $fpath)
+# rm -f ~/.zcompdump; compinit
 
 autoload -Uz compinit
 compinit
@@ -16,6 +35,9 @@ compinit
 
 # Initialise Starship
 eval "$(starship init zsh)"
+
+# Initialise Zoxide
+eval "$(zoxide init zsh)"
 
 # >>> vcpkg >>>
 export VCPKG_ROOT="$HOME/bin/vcpkg"
@@ -52,3 +74,5 @@ export PATH="$HOME/bin/julia-1.8.1/bin:$PATH"
 export COLORTERM=truecolor
 
 export JAVA_HOME=$(dirname $(readlink -f $(which java)))
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

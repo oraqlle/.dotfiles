@@ -4,115 +4,115 @@
 symbol = " "
 
 [conda]
-symbol = ""
+symbol = " "
 
 [dart]
 disabled = false
 format = "via [$symbol$version]($style) "
-symbol = ""
+symbol = " "
 
 [directory]
 read_only = " "
 truncation_length = 1
 
 [docker_context]
-symbol = ""
+symbol = " "
 
 [elixir]
 disabled = false
 format = "via [$symbol$version]($style) "
-symbol = ""
+symbol = " "
 detect_extensions = ["ex", "exs"]
 
 [elm]
 disabled = false
 format = "via [$symbol$version]($style) "
-symbol = ""
+symbol = " "
 
 [git_branch]
 disabled = false
-symbol = ""
+symbol = " "
 
 [golang]
 disabled = false
 format = "via [$symbol$version]($style) "
-symbol = ""
+symbol = " "
 
 [hg_branch]
 disabled = false
-symbol = ""
+symbol = " "
 
 [java]
 disabled = false
 format = "via [$symbol$version]($style) "
-symbol = ""
+symbol = " "
 
 [julia]
 disabled = false
 format = "via [$symbol$version]($style) "
-symbol = ""
+symbol = " "
 
 [memory_usage]
 disabled = false
 format = "$symbol [RAM: ${ram_pct}( | Swap: ${swap_pct})]($style) "
-symbol = "| "
+symbol = "|  "
 
 [nim]
 disabled = false
 format = "via [$symbol$version]($style) "
-symbol = ""
+symbol = " "
 
 [nix_shell]
 disabled = false
 format = "via [$symbol$version]($style) "
-symbol = ""
+symbol = " "
 
 [nodejs]
 disabled = false
 format = "via [$symbol$version]($style) "
-symbol = ""
+symbol = " "
 
 [package]
 disabled = false
 format = "is [$symbol $version]($style) "
-symbol = ""
+symbol = " "
 
 [perl]
 disabled = false
 format = "via [$symbol$version]($style) "
-symbol = ""
+symbol = " "
 
 [php]
 disabled = false
 format = "via [$symbol$version]($style) "
-symbol = ""
+symbol = " "
 
 [python]
 disabled = false
 format = "via [$symbol$version]($style) "
-symbol = ""
+symbol = " "
 
 [ruby]
 disabled = false
 format = "via [$symbol$version]($style) "
-symbol = ""
+symbol = " "
 
 [rust]
 disabled = false
 format = "via [$symbol$version]($style) "
-symbol = ""
+symbol = " "
 detect_extensions = ["rs", "rlib"]
 detect_files = ["Cargo.toml"]
 
 [scala]
 disabled = false
 format = "via [$symbol$version]($style) "
-symbol = ""
+symbol = " "
 
 [shlvl]
 disabled = false
 format = "via [$symbol$version]($style) "
-symbol = ""
+symbol = " "
 
 [cmake]
 disabled = false
@@ -123,40 +123,40 @@ style = "bold blue"
 [ocaml]
 disabled = false
 format = "via [$symbol$version]($style) "
-symbol = ""
+symbol = " "
 style = "bold yellow"
 
 [c]
-# symbol = ""
+# symbol = " "
 disabled = false
 format = "via [$symbol]($style) "
-symbol = ""
+symbol = " "
 detect_extensions = ["c", "h", "cxx", "hxx", "cpp", "hpp", "c++", "h++"]
 
 # [c++]
-# symbol = ""
+# symbol = " "
 
 [haskell]
 disabled = false
 format = "via [$symbol$version]($style) "
-symbol = ""
+symbol = " "
 
 
 [hostname]
 disabled = false
 format = "via [$symbol$version]($style) "
-ssh_symbol = ""
+ssh_symbol = " "
 
 
 [lua]
 disabled = false
 format = "via [$symbol$version]($style) "
-symbol = ""
+symbol = " "
 
 [meson]
 disabled = false
 format = "[$symbol $version]($style) "
-symbol = "| "
+symbol = "|  "
 
 [os.symbols]
 Ubuntu = " "
@@ -166,12 +166,12 @@ Debian = " "
 [swift]
 disabled = false
 format = "[$symbol$version]($style) "
-symbol = ""
+symbol = " "
 
 [zig]
 disabled = false
 format = "[$symbol]($style) "
-symbol = ""
+symbol = " "
 
 [shell]
 bash_indicator = " "
@@ -179,7 +179,7 @@ zsh_indicator = " "
 powershell_indicator = " "
 
 [sudo]
-symbol = "🧙"
+symbol = "🧙 "
 format = "[as $symbol]($style)"
 allow_windows = true
 

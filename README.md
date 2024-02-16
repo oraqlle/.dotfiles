@@ -15,13 +15,14 @@ git clone <git@github.com:oraqlle/.dotfiles.git> ~/.dotfiles
 ## Create symlinks in the Home directory to the real files in the repo
 
 ```zsh
-ln -s ~/.dotfiles/.zshrc ~/.zshrc
-ln -s ~/.dotfiles/.zshenv ~/.zshenv
-ln -s ~/.dotfiles/.zprofile ~/.zprofile
+ln -s ~/.dotfiles/.zsh ~/.zsh
 ln -s ~/.dotfiles/.profile ~/.profile
 ln -s ~/.dotfiles/.gitconfig ~/.gitconfig
 ln -s ~/.dotfiles/starship.toml ~/.config/starship.toml
 ln -s ~/.dotfiles/.bashrc ~/.bashrc
+ln -s ~/.dotfiles/.bash_aliases ~/.bash_aliases
+ln -s ~/.dotfiles/.fzf.bash ~/.fzf.bash
+ln -s ~/.dotfiles/.fzf.zsh ~/.fzf.zsh
 ```
 
 Upgrade Debian/Ubuntu packages
@@ -45,7 +46,7 @@ Install Tools and Packages from Cargo
 
 ```zsh
 cargo install starship --locked
-cargo install exa --locked
+cargo install eza --locked
 cargo install zoxide --locked
 cargo install bat --locked
 ```
@@ -90,7 +91,7 @@ Install tmux
 - Install Rust
 - Install tools and packages from Cargo
   - starship (shell prompt)
-  - exa
+  - eza
   - zoxide
   - bat
 - Neovim configure from Git repo
