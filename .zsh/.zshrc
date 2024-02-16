@@ -13,13 +13,16 @@ setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_FIND_NO_DUPS
 
 # Keybinds
-# bindkey -e  # Emacs keybinds in shell
+bindkey -e  # Emacs keybinds in shell
 # bindkey -v  # Vim keybinds in shell
 bindkey '^ ' autosuggest-accept
 
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/tyler/.zshrc'
+
+# OMZ Keybindings
+source $ZSH/omz-keybindings.zsh
 
 # Plugins
 # zsh-autosuggestions
@@ -32,12 +35,6 @@ fpath=($ZSH/plugins/zsh-completions/src $fpath)
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
-
-# Initialise Starship
-eval "$(starship init zsh)"
-
-# Initialise Zoxide
-eval "$(zoxide init zsh)"
 
 # >>> vcpkg >>>
 export VCPKG_ROOT="$HOME/bin/vcpkg"
@@ -76,3 +73,9 @@ export COLORTERM=truecolor
 export JAVA_HOME=$(dirname $(readlink -f $(which java)))
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Initialise Starship
+eval "$(starship init zsh)"
+
+# Initialise Zoxide
+eval "$(zoxide init zsh)"

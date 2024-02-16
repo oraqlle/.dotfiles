@@ -16,6 +16,8 @@ git clone <git@github.com:oraqlle/.dotfiles.git> ~/.dotfiles
 
 ```zsh
 ln -s ~/.dotfiles/.zsh ~/.zsh
+ln -s ~/.dotfiles/.zsh/.zshrc ~/.zshrc
+ln -s ~/.dotfiles/.zsh/.zshenv ~/.zshenv
 ln -s ~/.dotfiles/.profile ~/.profile
 ln -s ~/.dotfiles/.gitconfig ~/.gitconfig
 ln -s ~/.dotfiles/starship.toml ~/.config/starship.toml
@@ -23,6 +25,7 @@ ln -s ~/.dotfiles/.bashrc ~/.bashrc
 ln -s ~/.dotfiles/.bash_aliases ~/.bash_aliases
 ln -s ~/.dotfiles/.fzf.bash ~/.fzf.bash
 ln -s ~/.dotfiles/.fzf.zsh ~/.fzf.zsh
+. ~/.zshrc
 ```
 
 Upgrade Debian/Ubuntu packages
