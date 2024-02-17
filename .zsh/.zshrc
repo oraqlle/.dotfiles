@@ -28,14 +28,6 @@ source $ZSH/omz-keybindings.zsh
 # zsh-autosuggestions
 source $ZSH/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-# zsh-completions
-fpath=($ZSH/plugins/zsh-completions/src $fpath)
-# rm -f ~/.zcompdump; compinit
-
-autoload -Uz compinit
-compinit
-# End of lines added by compinstall
-
 # >>> vcpkg >>>
 export VCPKG_ROOT="$HOME/bin/vcpkg"
 export PATH="$VCPKG_ROOT:$PATH"
@@ -58,14 +50,24 @@ export NVM_DIR="$HOME/.nvm"
 alias cp-rjs="cp -r file://$HOME/bin/reveal.js"
 
 # User Variable Exports
+# Go paths
 export PATH="/usr/local/go/bin:$PATH"
 export PATH="$HOME/go/bin:$PATH"
+
+# Local binaries
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/bin/CBQN:$PATH"
+
+# Custom GCC binary
 export PATH="/usr/local/gcc-14.0.0/bin:$PATH"
+
+# Custom Neovim binary
 export PATH="$HOME/bin/neovim/bin/bin:$PATH"
+
+# Custom Lua binary
 export PATH="$HOME/bin/lua-5.4.6/src:$PATH"
 
+# Custom Julia binary
 export PATH="$HOME/bin/julia-1.8.1/bin:$PATH"
 
 export COLORTERM=truecolor
@@ -79,3 +81,15 @@ eval "$(starship init zsh)"
 
 # Initialise Zoxide
 eval "$(zoxide init zsh)"
+
+# ZSH Completions
+# zsh-completions
+fpath=($ZSH/plugins/zsh-completions/src $fpath)
+# rm -f ~/.zcompdump; compinit
+
+# asdf zsh completions
+fpath=(${ASDF_DIR}/completions $fpath)
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
