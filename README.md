@@ -9,7 +9,7 @@ cd ~
 Clone .dotfiles repo into new hidden directory
 
 ```zsh
-git clone <git@github.com:oraqlle/.dotfiles.git> ~/.dotfiles
+git clone --recurse-submodules -j2 <git@github.com:oraqlle/.dotfiles.git> ~/.dotfiles
 ```
 
 ## Create symlinks in the Home directory to the real files in the repo
@@ -22,7 +22,6 @@ ln -s ~/.dotfiles/.profile ~/.profile
 ln -s ~/.dotfiles/.gitconfig ~/.gitconfig
 ln -s ~/.dotfiles/starship.toml ~/.config/starship.toml
 ln -s ~/.dotfiles/.bashrc ~/.bashrc
-ln -s ~/.dotfiles/.bash_aliases ~/.bash_aliases
 ln -s ~/.dotfiles/.fzf.bash ~/.fzf.bash
 ln -s ~/.dotfiles/.fzf.zsh ~/.fzf.zsh
 ln -s ~/.dotfiles/.tool-versions ~/.tool-versions
