@@ -28,6 +28,12 @@ source $ZSH/omz-keybindings.zsh
 # zsh-autosuggestions
 source $ZSH/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
+# Aliases
+alias fzf="fzf --preview 'bat --color=always {}'"
+alias ezal="eza -l"
+alias ezaa="eza -a"
+alias ezala="eza -la"
+
 # >>> vcpkg >>>
 export VCPKG_ROOT="$HOME/bin/vcpkg"
 export PATH="$VCPKG_ROOT:$PATH"
