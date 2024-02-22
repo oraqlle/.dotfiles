@@ -1,8 +1,8 @@
 # ZSH HOME
-export ZSH=$HOME/.zsh
+export ZSH=$HOME/.dotfiles
 
 ## Lines configured by zsh-newuser-install
-HISTFILE=$ZSH/.zsh_history
+HISTFILE=$HOME/.zsh_history
 HISTSIZE=5000
 SAVEHIST=10000
 

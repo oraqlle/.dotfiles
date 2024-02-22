@@ -17,11 +17,8 @@ git clone --recurse-submodules -j2 <git@github.com:oraqlle/.dotfiles.git> ~/.dot
 ```zsh
 ln -s ~/.dotfiles/.zshrc ~/.zshrc
 ln -s ~/.dotfiles/.zshenv ~/.zshenv
-ln -s ~/.dotfiles/.zsh_history ~/.zsh_history
-ln -s ~/.dotfiles/.profile ~/.profile
 ln -s ~/.dotfiles/.gitconfig ~/.gitconfig
 ln -s ~/.dotfiles/starship.toml ~/.config/starship.toml
-ln -s ~/.dotfiles/.bashrc ~/.bashrc
 ln -s ~/.dotfiles/.fzf.bash ~/.fzf.bash
 ln -s ~/.dotfiles/.fzf.zsh ~/.fzf.zsh
 ln -s ~/.dotfiles/.tool-versions ~/.tool-versions
