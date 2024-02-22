@@ -15,9 +15,9 @@ git clone --recurse-submodules -j2 <git@github.com:oraqlle/.dotfiles.git> ~/.dot
 ## Create symlinks in the Home directory to the real files in the repo
 
 ```zsh
-ln -s ~/.dotfiles/.zsh ~/.zsh
-ln -s ~/.dotfiles/.zsh/.zshrc ~/.zshrc
-ln -s ~/.dotfiles/.zsh/.zshenv ~/.zshenv
+ln -s ~/.dotfiles/.zshrc ~/.zshrc
+ln -s ~/.dotfiles/.zshenv ~/.zshenv
+ln -s ~/.dotfiles/.zsh_history ~/.zsh_history
 ln -s ~/.dotfiles/.profile ~/.profile
 ln -s ~/.dotfiles/.gitconfig ~/.gitconfig
 ln -s ~/.dotfiles/starship.toml ~/.config/starship.toml
