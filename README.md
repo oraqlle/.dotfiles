@@ -114,22 +114,22 @@ Install tmux
 
 ## Instructions left to write
 
-- Base packages from APT
-- Install Rust
-- Install tools and packages from Cargo
-  - starship (shell prompt)
-  - eza
-  - zoxide
-  - bat
-- Neovim configure from Git repo
-- C++ Toolchains
-  - GCC
-  - Clang
-  - CMake
-  - Make
-  - Ninja
-  - vcpkg
-- Install OCaml
-- Install ASDF and Elixir Components
-- Install Go
+- ~~Base packages from APT~~
+- ~~Install Rust~~
+- ~~Install tools and packages from Cargo~~
+  - ~~starship (shell prompt)~~
+  - ~~eza~~
+  - ~~zoxide~~
+  - ~~bat~~
+- ~~Neovim configure from Git repo~~
+- ~~C++ Toolchains~~
+  - ~~GCC~~
+  - ~~Clang~~
+  - ~~CMake~~
+  - ~~Make~~
+  - ~~Ninja~~
+  - ~~vcpkg~~
+- ~~Install OCaml~~
+- ~~Install ASDF and Elixir Components~~
+- ~~Install Go~~
 - Install tmux

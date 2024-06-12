@@ -34,11 +34,6 @@ alias ezal="eza -l"
 alias ezaa="eza -a"
 alias ezala="eza -la"
 
-# >>> vcpkg >>>
-export VCPKG_ROOT="$HOME/bin/vcpkg"
-export PATH="$VCPKG_ROOT:$PATH"
-# <<< vcpkg <<<
-
 # opam configuration
 [[ ! -r /home/tyler/.opam/opam-init/init.zsh ]] || source /home/tyler/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
 
@@ -56,12 +51,20 @@ export NVM_DIR="$HOME/.nvm"
 alias cp-rjs="cp -r file://$HOME/bin/reveal.js"
 
 # User Variable Exports
+
+# >>> vcpkg >>>
+export VCPKG_ROOT="$HOME/bin/vcpkg"
+export PATH="$VCPKG_ROOT:$PATH"
+# <<< vcpkg <<<
+
 # Go paths
 export PATH="/usr/local/go/bin:$PATH"
 export PATH="$HOME/go/bin:$PATH"
 
 # Local binaries
 export PATH="$HOME/.local/bin:$PATH"
+
+# CBQN
 export PATH="$HOME/bin/CBQN:$PATH"
 
 # Custom GCC binary
@@ -75,6 +78,10 @@ export PATH="$HOME/bin/lua-5.4.6/src:$PATH"
 
 # Custom Julia binary
 export PATH="$HOME/bin/julia-1.8.1/bin:$PATH"
+
+# Zig Binaries
+alias zig-master="$HOME/bin/zig/build/stage3/bin/zig"
+export PATH="$HOME/bin/zigup/zig-out/bin:$PATH"
 
 export COLORTERM=truecolor
 
@@ -99,3 +106,4 @@ fpath=(${ASDF_DIR}/completions $fpath)
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
+
