@@ -2,7 +2,7 @@
 	email = 41113853+oraqlle@users.noreply.github.com
 	name = oraqlle
 [core]
-	editor = code --wait
+	editor = nvim
 [diff]
 	tool = vscode
 [difftool "vscode"]

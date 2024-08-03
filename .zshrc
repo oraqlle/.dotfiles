@@ -85,7 +85,7 @@ export PATH="$HOME/bin/zigup/zig-out/bin:$PATH"
 
 export COLORTERM=truecolor
 
-export JAVA_HOME=$(dirname $(readlink -f $(which java)))
+export JAVA_HOME=$(dirname $(dirname $(readlink -f $(which java))))
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -102,6 +102,26 @@ fpath=($ZSH/plugins/zsh-completions/src $fpath)
 
 # asdf zsh completions
 fpath=(${ASDF_DIR}/completions $fpath)
+
+# conda (University)
+# export PATH="$HOME/anaconda3/bin:$PATH"  # commented out by conda initialize
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/tyler/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/tyler/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/tyler/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/tyler/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+[ -f "/home/tyler/.ghcup/env" ] && . "/home/tyler/.ghcup/env" # ghcup-env
 
 autoload -Uz compinit
 compinit
