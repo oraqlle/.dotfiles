@@ -80,8 +80,9 @@ export PATH="$HOME/bin/lua-5.4.6/src:$PATH"
 export PATH="$HOME/bin/julia-1.8.1/bin:$PATH"
 
 # Zig Binaries
-alias zig-master="$HOME/bin/zig/build/stage3/bin/zig"
-export PATH="$HOME/bin/zigup/zig-out/bin:$PATH"
+alias zig-master="$HOME/bin/zig-src/build/stage3/bin/zig"
+export PATH="$HOME/bin/zigmod/zig-out/bin:$PATH"
+# export PATH="$HOME/bin/zigup/zig-out/bin:$PATH"
 
 export COLORTERM=truecolor
 

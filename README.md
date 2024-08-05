@@ -118,11 +118,35 @@ curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
 Install Zig Toolchains
 
 ```zsh
+# Master Toolchain
 cd ~/bin
-git clone git@github.com:ziglang/zig.git
+git clone git@github.com:ziglang/zig.git zig-src
+cd zig-src
+mkdir build
+cd build
+cmake .. -DCMAKE_BUILD_TYPE=Release
+make install -j8
+cd ~/bin
+
 git clone git@github.com:zigtools/zls.git
+cd zls
+zig-master build -Doptimize=ReleaseSafe
+cd ~/bin
+
+# Versioned Toolchain
+# Source: https://marler8997.github.io/zigup/
+curl -L https://github.com/marler8997/zigup/releases/download/v2024_05_05/zigup-x86_64-linux.tar.gz | tar xz
+zigup 0.12.0
+cd ~/bin
+
 git clone git@github.com:nektro/zigmod.git
-git clone git@github.com:marler8997/zigup.git
+cd zigmod
+zig build -j8
+cd ~/bin
+
+cd zls
+git checkout 0.12.0
+zig build -Doptimize=ReleaseSafe
 ```
 
 Install tmux
