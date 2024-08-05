@@ -123,6 +123,8 @@ unset __conda_setup
 
 [ -f "/home/tyler/.ghcup/env" ] && . "/home/tyler/.ghcup/env" # ghcup-env
 
+fpath+=~/.zfunc
+
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall

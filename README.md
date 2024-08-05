@@ -6,36 +6,36 @@ Start in your home directory
 cd ~
 ```
 
-Clone .dotfiles repo into new hidden directory
-
-```zsh
-git clone --recurse-submodules -j2 <git@github.com:oraqlle/.dotfiles.git> ~/.dotfiles
-```
-
-## Create symlinks in the Home directory to the real files in the repo
-
-```zsh
-ln -s ~/.dotfiles/.zshrc ~/.zshrc
-ln -s ~/.dotfiles/.zshenv ~/.zshenv
-ln -s ~/.dotfiles/.gitconfig ~/.gitconfig
-ln -s ~/.dotfiles/starship.toml ~/.config/starship.toml
-ln -s ~/.dotfiles/.fzf.bash ~/.fzf.bash
-ln -s ~/.dotfiles/.fzf.zsh ~/.fzf.zsh
-ln -s ~/.dotfiles/.tool-versions ~/.tool-versions
-. ~/.zshrc
-```
-
-Upgrade Debian/Ubuntu packages
+Install Debian/Ubuntu Packages
 
 ```zsh
 sudo apt update;sudo apt upgrade -y
 sudo apt install build-essential git zsh cmake gdb ninja-build
 ```
 
+Install Fedora Packages
+
+```zsh
+sudo dnf update; sudo dnf upgrade -y
+sudo dnf install git cmake gdb ninja-build make automake kernel-devel gcc gcc-c++ llvm clang llvm-devel clang-devel lld-devel @development-tools
+```
+
+Clone .dotfiles repo into new hidden directory
+
+```zsh
+git clone --recurse-submodules -j2 <git@github.com:oraqlle/.dotfiles.git> ~/.dotfiles
+```
+
 Set Shell to ZSH
 
 ```bash
 chsh -s $(which zsh)
+```
+
+Install Starship
+
+```zsh
+curl -sS https://starship.rs/install.sh | sh
 ```
 
 Install Rust
@@ -63,7 +63,7 @@ git clone git@github.com:oraqlle/nvim.git
 Install C++ toolchains
 
 ```zsh
-# LLVM install
+# LLVM install (Debian/Ubuntu)
 wget https://apt.llvm.org/llvm.sh
 chmod +x llvm.sh
 sudo ./llvm.sh <version number>
@@ -91,6 +91,7 @@ opam install ocaml-lsp-server odoc ocamlformat utop
 Install ASDF, Erlang VM and Elixir
 
 ```zsh
+sudo dnf install ncurses-devel
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.14.0
 . ~/.zshrc
 asdf plugin-add erlang https://github.com/asdf-vm/asdf-erlang.git
@@ -105,12 +106,41 @@ Install Go
 ```zsh
 rm -rf /usr/local/go
 wget https://dl.google.com/go/go1.22.0.linux-amd64.tar.gz
-tar -C /usr/local -xzf go1.22.0.linux-amd64.tar.gz
+sudo tar -C /usr/local -xzf go1.22.0.linux-amd64.tar.gz
+```
+
+Install Haskell
+
+```zsh
+curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
+```
+
+Install Zig Toolchains
+
+```zsh
+cd ~/bin
+git clone git@github.com:ziglang/zig.git
+git clone git@github.com:zigtools/zls.git
+git clone git@github.com:nektro/zigmod.git
+git clone git@github.com:marler8997/zigup.git
 ```
 
 Install tmux
 
 ~
+
+## Create symlinks in the Home directory to the real files in the repo
+
+```zsh
+ln -s ~/.dotfiles/.zshrc ~/.zshrc
+ln -s ~/.dotfiles/.zshenv ~/.zshenv
+ln -s ~/.dotfiles/.gitconfig ~/.gitconfig
+ln -s ~/.dotfiles/starship.toml ~/.config/starship.toml
+ln -s ~/.dotfiles/.fzf.bash ~/.fzf.bash
+ln -s ~/.dotfiles/.fzf.zsh ~/.fzf.zsh
+ln -s ~/.dotfiles/.tool-versions ~/.tool-versions
+. ~/.zshrc
+```
 
 ## Instructions left to write
 
