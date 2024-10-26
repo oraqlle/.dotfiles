@@ -153,6 +153,13 @@ Install tmux
 
 ~
 
+Install Charm Tools
+
+```zsh
+go install github.com/charmbracelet/glow@latest
+go install github.com/charmbracelet/confetty@latest
+```
+
 ## Create symlinks in the Home directory to the real files in the repo
 
 ```zsh

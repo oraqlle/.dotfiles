@@ -12,6 +12,10 @@ setopt HIST_IGNORE_ALL_DUPS
 # History won't show duplicates on search.
 setopt HIST_FIND_NO_DUPS
 
+# Share History
+setopt INC_APPEND_HISTORY
+setopt SHARE_HISTORY
+
 # Keybinds
 bindkey -e  # Emacs keybinds in shell
 # bindkey -v  # Vim keybinds in shell
@@ -51,6 +55,9 @@ export NVM_DIR="$HOME/.nvm"
 alias cp-rjs="cp -r file://$HOME/bin/reveal.js"
 
 # User Variable Exports
+
+# Editor
+export EDITOR="nvim"
 
 # >>> vcpkg >>>
 export VCPKG_ROOT="$HOME/bin/vcpkg"
