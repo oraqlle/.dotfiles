@@ -6,18 +6,24 @@ Start in your home directory
 cd ~
 ```
 
-Install Debian/Ubuntu Packages
+Install Core Debian/Ubuntu Packages
 
 ```zsh
 sudo apt update;sudo apt upgrade -y
 sudo apt install build-essential git zsh cmake gdb ninja-build
 ```
 
-Install Fedora Packages
+Install Core Fedora Packages
 
 ```zsh
 sudo dnf update; sudo dnf upgrade -y
 sudo dnf install git cmake gdb ninja-build make automake kernel-devel gcc gcc-c++ llvm clang llvm-devel clang-devel lld-devel @development-tools
+```
+
+Install Optional Tools
+
+```zsh
+sudo dnf install btop
 ```
 
 Clone .dotfiles repo into new hidden directory
@@ -47,10 +53,12 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 Install Tools and Packages from Cargo
 
 ```zsh
-cargo install starship --locked
-cargo install eza --locked
-cargo install zoxide --locked
-cargo install bat --locked
+cargo install starship --locked  # Terminal prompt
+cargo install eza --locked       # Better ls
+cargo install zoxide --locked    # Better cd
+cargo install bat --locked       # Better cat
+cargo install viu                # Images in terminal (must be Kitty Terminal)
+cargo install ripgrep            # Newer grep
 ```
 
 Config Neovim
@@ -151,13 +159,38 @@ zig build -Doptimize=ReleaseSafe
 
 Install tmux
 
-~
+```zsh
+sudo dnf install tmux
+```
 
 Install Charm Tools
 
 ```zsh
 go install github.com/charmbracelet/glow@latest
 go install github.com/charmbracelet/confetty@latest
+```
+
+Install Kitty Terminal for Images in Terminal
+
+```zsh
+curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
+
+# Create symbolic links to add kitty and kitten to PATH (assuming ~/.local/bin is in
+# your system-wide PATH)
+ln -sf ~/.local/kitty.app/bin/kitty ~/.local/kitty.app/bin/kitten ~/.local/bin/
+
+# Place the kitty.desktop file somewhere it can be found by the OS
+cp ~/.local/kitty.app/share/applications/kitty.desktop ~/.local/share/applications/
+
+# If you want to open text files and images in kitty via your file manager also add the kitty-open.desktop file
+cp ~/.local/kitty.app/share/applications/kitty-open.desktop ~/.local/share/applications/
+
+# Update the paths to the kitty and its icon in the kitty desktop file(s)
+sed -i "s|Icon=kitty|Icon=$(readlink -f ~)/.local/kitty.app/share/icons/hicolor/256x256/apps/kitty.png|g" ~/.local/share/applications/kitty*.desktop
+sed -i "s|Exec=kitty|Exec=$(readlink -f ~)/.local/kitty.app/bin/kitty|g" ~/.local/share/applications/kitty*.desktop
+
+# Make xdg-terminal-exec (and hence desktop environments that support it use kitty)
+echo 'kitty.desktop' > ~/.config/xdg-terminals.list
 ```
 
 ## Create symlinks in the Home directory to the real files in the repo
@@ -170,6 +203,7 @@ ln -s ~/.dotfiles/starship.toml ~/.config/starship.toml
 ln -s ~/.dotfiles/.fzf.bash ~/.fzf.bash
 ln -s ~/.dotfiles/.fzf.zsh ~/.fzf.zsh
 ln -s ~/.dotfiles/.tool-versions ~/.tool-versions
+ln -s ~/.dotfiles/.tmux.conf ~/.tmux.conf
 . ~/.zshrc
 ```
 
@@ -193,4 +227,5 @@ ln -s ~/.dotfiles/.tool-versions ~/.tool-versions
 - ~~Install OCaml~~
 - ~~Install ASDF and Elixir Components~~
 - ~~Install Go~~
-- Install tmux
+- ~~Install tmux~~
+
