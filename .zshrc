@@ -37,6 +37,7 @@ alias fzf="fzf --preview 'bat --color=always {}'"
 alias ezal="eza -l"
 alias ezaa="eza -a"
 alias ezala="eza -la"
+alias txat="tmux attach -t"
 
 # opam configuration
 [[ ! -r /home/tyler/.opam/opam-init/init.zsh ]] || source /home/tyler/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
