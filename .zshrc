@@ -33,11 +33,12 @@ source $ZSH/omz-keybindings.zsh
 source $ZSH/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Aliases
-alias fzf="fzf --preview 'bat --color=always {}'"
-alias ezal="eza -l"
-alias ezaa="eza -a"
-alias ezala="eza -la"
-alias txat="tmux attach -t"
+alias fzf-bat="fzf --preview 'bat --color=always {}'"
+alias cp-rjs="cp -r file://$HOME/bin/reveal.js"
+
+alias zig="$HOME/bin/zig/build/0.14.1/stage3/bin/zig"
+alias zola="flatpak run org.getzola.zola"
+
 
 # opam configuration
 [[ ! -r /home/tyler/.opam/opam-init/init.zsh ]] || source /home/tyler/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
@@ -52,8 +53,6 @@ test -f "/home/tyler/.xmake/profile" && source "/home/tyler/.xmake/profile"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-alias cp-rjs="cp -r file://$HOME/bin/reveal.js"
 
 # User Variable Exports
 
@@ -87,11 +86,6 @@ export PATH="$HOME/bin/lua-5.4.6/src:$PATH"
 # Custom Julia binary
 export PATH="$HOME/bin/julia-1.8.1/bin:$PATH"
 
-# Zig Binaries
-alias zig-master="$HOME/bin/zig-src/build/stage3/bin/zig"
-export PATH="$HOME/bin/zigmod/zig-out/bin:$PATH"
-# export PATH="$HOME/bin/zigup/zig-out/bin:$PATH"
-
 export COLORTERM=truecolor
 
 export JAVA_HOME=$(dirname $(dirname $(readlink -f $(which java))))
@@ -100,9 +94,6 @@ export JAVA_HOME=$(dirname $(dirname $(readlink -f $(which java))))
 
 # Initialise Starship
 eval "$(starship init zsh)"
-
-# Initialise Zoxide
-eval "$(zoxide init zsh)"
 
 # ZSH Completions
 # zsh-completions
