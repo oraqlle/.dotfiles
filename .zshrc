@@ -27,8 +27,8 @@ zstyle :compinstall filename '/home/oraqlle/.zshrc'
 export EDITOR="nvim"
 export COLORTERM=truecolor
 
-# OMZ Keybindings
-#source $ZSH/omz-keybindings.zsh
+# OMZ Keybindings for Ctrl-key movements etc.
+source $ZSH/omz-keybindings.zsh
 
 # Aliases
 alias fzf-bat="fzf --preview 'bat --color=always {}'"
