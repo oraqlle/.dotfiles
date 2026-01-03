@@ -33,8 +33,8 @@ export COLORTERM=truecolor
 # Aliases
 alias fzf-bat="fzf --preview 'bat --color=always {}'"
 
-# Initialise Starship
-#eval "$(starship init zsh)"
+# Starship
+eval "$(starship init zsh)"
 
 # Plugins
 # zsh-autosuggestions

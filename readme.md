@@ -20,7 +20,9 @@ git clone --recurse-submodules -j2 git@github.com:oraqlle/.dotfiles.git ~/.dotfi
 ln -s ~/.dotfiles/.zshrc ~/.zshrc
 ln -s ~/.dotfiles/.tmux.conf ~/.tmux.conf
 ln -s ~/.dotfiles/.gitconfig ~/.gitconfig
-ln -s ~/.dotfiles/ghostty-config ~/.config/ghostty/config
+ln -s ~/.dotfiles/ghostty/config ~/.config/ghostty/config
+mkdir ~/.config/ghostty/themes
+ln -s ~/.dotfiles/ghostty/themes/rose-pine ~/.config/ghostty/themes/rose-pine
 ln -s ~/.dotfiles/starship.toml ~/.config/starship.toml
 ```
 
